@@ -1,0 +1,55 @@
+import * as  React from 'react';
+import './hello.css';
+
+export interface Props {
+    name: string;
+    enthusiasmLevel?: number;
+    onIncrement?: () => void;
+    onDecrement?: () => void;
+  }
+
+class Hello extends React.Component<Props, {}>{
+    constructor(props: Props){
+        super(props);
+    }
+
+    render(){
+        const {name, enthusiasmLevel=1, onDecrement, onIncrement } = this.props;
+
+        if(enthusiasmLevel <= 0){
+            throw new Error('you could need more enthusiam');
+        }
+        return (
+            <div className="hello">
+            <div className="greeting">
+            {name}
+            {enthusiasmLevel}
+            {/* Hello {name + getExclamationMarks(enthusiasmLevel)} */}
+            </div>
+            <button onClick={onDecrement}>-</button>
+            <button onClick={onIncrement}>+</button>
+        </div>
+        )
+    }
+}
+
+
+// function Hello({name, enthusiasmLevel = 1}: Props){
+//     if(enthusiasmLevel <= 0){
+//         throw new Error('you could need more enthusiam');
+//     }
+//     return (
+//         <div className="hello">
+//         <div className="greeting">
+//           Hello {name + getExclamationMarks(enthusiasmLevel)}
+//         </div>
+//       </div>
+//     )
+// }
+
+
+export default Hello;
+
+// function getExclamationMarks(numberChars: number){
+//     return Array(numberChars + 1).join('!')
+// }
