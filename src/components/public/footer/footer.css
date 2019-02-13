@@ -4,4 +4,7 @@
     height:40px;
     line-height: 40px;
     background: #c8c8c8;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
