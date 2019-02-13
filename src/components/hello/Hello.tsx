@@ -1,5 +1,7 @@
 import * as  React from 'react';
 import './hello.css';
+import Header from '../public/header/header';
+import Footer from '../public/footer/footer';
 
 export interface Props {
     name: string;
@@ -21,6 +23,8 @@ class Hello extends React.Component<Props, {}>{
         }
         return (
             <div className="hello">
+            <Header name='Title'></Header>
+            <Footer name='Footer'></Footer>
             <div className="greeting">
             {name}
             {enthusiasmLevel}
