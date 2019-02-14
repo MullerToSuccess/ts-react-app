@@ -18,4 +18,5 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiamAction>) 
   }
 }
 
+//connect 成容器组件
 export default connect(mapStateToProps, mapDispatchToProps)(Hello);

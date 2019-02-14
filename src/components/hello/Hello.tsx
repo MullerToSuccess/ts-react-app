@@ -3,6 +3,7 @@ import './hello.css';
 import Header from '../public/header/header';
 import Footer from '../public/footer/footer';
 
+
 export interface Props {
     name: string;
     enthusiasmLevel?: number;
@@ -23,37 +24,18 @@ class Hello extends React.Component<Props, {}>{
         }
         return (
             <div className="hello">
-            <Header name='Title'></Header>
-            <Footer name='Footer'></Footer>
-            <div className="greeting">
-            {name}
-            {enthusiasmLevel}
-            {/* Hello {name + getExclamationMarks(enthusiasmLevel)} */}
+                <Header name='Title'></Header>
+                <Footer name='Footer'></Footer>
+                <div className="greeting">
+                {name}
+                {enthusiasmLevel}
+                {/* Hello {name + getExclamationMarks(enthusiasmLevel)} */}
+                </div>
+                <button onClick={onDecrement}>-</button>
+                <button onClick={onIncrement}>+</button>
             </div>
-            <button onClick={onDecrement}>-</button>
-            <button onClick={onIncrement}>+</button>
-        </div>
         )
     }
 }
 
-
-// function Hello({name, enthusiasmLevel = 1}: Props){
-//     if(enthusiasmLevel <= 0){
-//         throw new Error('you could need more enthusiam');
-//     }
-//     return (
-//         <div className="hello">
-//         <div className="greeting">
-//           Hello {name + getExclamationMarks(enthusiasmLevel)}
-//         </div>
-//       </div>
-//     )
-// }
-
-
 export default Hello;
-
-// function getExclamationMarks(numberChars: number){
-//     return Array(numberChars + 1).join('!')
-// }
