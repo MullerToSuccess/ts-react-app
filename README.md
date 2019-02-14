@@ -13,3 +13,8 @@
    
    "redux-devtools-extension": "^2.13.8"
  - react-redux
+### 操作
+	
+ 
+ - npm install
+ - npm run start
