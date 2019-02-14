@@ -10,9 +10,10 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          
         </header>
           <ul>
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/"></Link></li>
             <li><Link to="/hello">Hello</Link></li>
           </ul>
       </div>

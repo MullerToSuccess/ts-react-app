@@ -18,7 +18,8 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "skipLibCheck": true
+    "typeRoots": ["./typings", "node_modules/@types"]
+    // "skipLibCheck": true,
   },
   "exclude": [
     "node_modules",

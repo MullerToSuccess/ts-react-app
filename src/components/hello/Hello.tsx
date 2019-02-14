@@ -2,7 +2,8 @@ import * as  React from 'react';
 import './hello.css';
 import Header from '../public/header/header';
 import Footer from '../public/footer/footer';
-
+// import { Button } from 'antd-mobile';
+import 'antd-mobile/dist/antd-mobile.css';
 
 export interface Props {
     name: string;
@@ -27,6 +28,7 @@ class Hello extends React.Component<Props, {}>{
                 <Header name='Title'></Header>
                 <Footer name='Footer'></Footer>
                 <div className="greeting">
+                {/* <Button>111</Button> */}
                 {name}
                 {enthusiasmLevel}
                 {/* Hello {name + getExclamationMarks(enthusiasmLevel)} */}
@@ -38,4 +40,5 @@ class Hello extends React.Component<Props, {}>{
     }
 }
 
+// ReactDOM.render(<Hello />, mountNode);
 export default Hello;

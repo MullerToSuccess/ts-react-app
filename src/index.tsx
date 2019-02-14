@@ -11,6 +11,7 @@ import Hello from "./containers/Hello";
 // 安装redux-devtools-extension的可视化工具。
 import { composeWithDevTools } from "redux-devtools-extension";
 // import { Route} from 'react-router';
+// import {Button} from 'antd-mobile';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 //在storeState泛型定义返回会报错：参数个数不对应
 // const store = createStore<StoreState>(enthusiam, {
@@ -31,6 +32,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
+        {/* <Button></Button> */}
         <Route exact path="/" component={App} />
         <Route path="/hello" component={Hello}/>
       </div>
