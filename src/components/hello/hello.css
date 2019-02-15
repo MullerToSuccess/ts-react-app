@@ -11,3 +11,7 @@
     font-size: 40px;
     min-width: 50px;
   }
+  .btn{
+    /* width: 30px; */
+    height: 60px !important;
+  }
