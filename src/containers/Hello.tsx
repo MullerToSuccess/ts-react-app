@@ -13,7 +13,13 @@ export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiamAction>) {
   return {
-    onIncrement: () => dispatch(actions.incrementEnthusiam()),
+    onIncrement: () => {
+      setTimeout(() => {
+        dispatch(actions.incrementEnthusiam())
+      }, 3000);
+      dispatch(actions.decrementEnthusiam())
+    },
+    // dispatch(actions.incrementEnthusiam()),
     onDecrement: () => dispatch(actions.decrementEnthusiam()),
   }
 }

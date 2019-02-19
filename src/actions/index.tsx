@@ -10,7 +10,15 @@ export interface DecrementEnthusiam{
 
 export type EnthusiamAction = IncrementEnthusiam | DecrementEnthusiam;
 
-
+export interface ChangeItem{
+    type: constants.CHANGE_ITEM;
+}
+/**
+ *
+ *纯action返回action的string类型的type
+ * @export
+ * @returns {IncrementEnthusiam}
+ */
 export function  incrementEnthusiam(): IncrementEnthusiam{
      return {
          type: constants.INCREMENT_ENTHUSIASM
@@ -19,5 +27,11 @@ export function  incrementEnthusiam(): IncrementEnthusiam{
 export function decrementEnthusiam(): DecrementEnthusiam{
     return {
         type: constants.DECREMENT_ENTHUSIASM
+    }
+}
+
+export function changeAction(): ChangeItem{
+    return {
+        type: constants.CHANGE_ITEM
     }
 }

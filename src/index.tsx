@@ -1,30 +1,24 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import App from './App';
+// import App from './App';
 import { Provider } from "react-redux";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
-import { createStore } from "redux";
-import { enthusiam } from "./reducers/index";
-// import { StoreState } from './types/index';
+import { createStore, applyMiddleware } from "redux";
+import  thunk  from 'redux-thunk';
+import  reducers  from "./reducers/index";
 import Hello from "./containers/Hello";
-// 安装redux-devtools-extension的可视化工具。
+import Home from './pages/home/home';
+// 安装redux-devtools-extension的可视化工具
 import { composeWithDevTools } from "redux-devtools-extension";
-// import { Route} from 'react-router';
-// import {Button} from 'antd-mobile';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-//在storeState泛型定义返回会报错：参数个数不对应
-// const store = createStore<StoreState>(enthusiam, {
-//   enthusiasmLevel: 1,
-//   languageName: 'TypeScript'
-// })
+
+// 定义需要的中间件
+const middleware = [thunk];
+//initalState:
 const store = createStore(
-  enthusiam,
-  {
-    enthusiasmLevel: 1,
-    languageName: ""
-  },
-  composeWithDevTools()
+  reducers,
+  composeWithDevTools(applyMiddleware(...middleware))
 );
 
 
@@ -33,7 +27,7 @@ ReactDOM.render(
     <Router>
       <div>
         {/* <Button></Button> */}
-        <Route exact path="/" component={App} />
+        <Route exact path="/" component={Home} />
         <Route path="/hello" component={Hello}/>
       </div>
     </Router>
