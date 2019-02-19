@@ -13,6 +13,7 @@ export type EnthusiamAction = IncrementEnthusiam | DecrementEnthusiam;
 export interface ChangeItem{
     type: constants.CHANGE_ITEM;
 }
+
 /**
  *
  *纯action返回action的string类型的type
