@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
-import { createStore, applyMiddleware } from "redux";
+import { Store, createStore, applyMiddleware } from "redux";
 import  thunk  from 'redux-thunk';
 import  reducers  from "./reducers/index";
 import Hello from "./containers/Hello";
@@ -16,7 +16,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // 定义需要的中间件
 const middleware = [thunk];
 //initalState:
-const store = createStore(
+const store: Store<any>= createStore(
   reducers,
   composeWithDevTools(applyMiddleware(...middleware))
 );

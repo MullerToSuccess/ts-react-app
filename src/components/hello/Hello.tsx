@@ -4,7 +4,7 @@ import "./hello.css";
 // import Footer from '../public/footer/footer';
 // import Test from '../public/test/test';
 import SideMenu from '../sideMenu/Sidemenu';
-import Crumb from '../crumb/Crumb';
+import Crumb from '../../containers/Crumb';
 import { Button, Layout, Icon, Timeline} from "antd";
 import "antd/dist/antd.css";
 // import 'antd-mobile/dist/antd-mobile.css';
@@ -48,7 +48,7 @@ class Hello extends React.Component<Props, {}> {
     this.setState({ collapsed, test: data });
   };
   render() {
-    const { name, enthusiasmLevel = 1, onDecrement, onIncrement } = this.props;
+    const { name='mmm', enthusiasmLevel = 1, onDecrement, onIncrement } = this.props;
 
     if (enthusiasmLevel <= 0) {
       throw new Error("you could need more enthusiam");

@@ -1,4 +1,4 @@
-import * as constants from '../constants';
+import * as constants from '../constants/index';
 
 export interface IncrementEnthusiam{
    type: constants.INCREMENT_ENTHUSIASM; 
@@ -31,6 +31,12 @@ export function decrementEnthusiam(): DecrementEnthusiam{
     }
 }
 
+/**
+ *change_item的action
+ *
+ * @export
+ * @returns {ChangeItem}
+ */
 export function changeAction(): ChangeItem{
     return {
         type: constants.CHANGE_ITEM

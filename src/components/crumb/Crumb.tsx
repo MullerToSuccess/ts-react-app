@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Breadcrumb } from "antd";
+import { Breadcrumb, Button } from "antd";
 
 export interface Item{
     itemName?: string;
@@ -11,11 +11,16 @@ class Crumb extends React.Component<Item>{
     super(props);
   }
   render() {
-    const { itemName } = this.props;
+    const { itemName, changeItem } = this.props;
     return (
+      <div>
+        <Button className="btn" type="primary" onClick={changeItem}>
+                  {itemName}
+                </Button>
       <Breadcrumb style={{ margin: "16px 0" }}>
         <Breadcrumb.Item>{itemName}</Breadcrumb.Item>
       </Breadcrumb>
+      </div>
     );
   }
 }

@@ -1,14 +1,22 @@
 import { EnthusiamAction } from "../actions";
-import { StoreState } from "../types/index";
+// import { StoreState } from "../types";
 import {
   INCREMENT_ENTHUSIASM,
   DECREMENT_ENTHUSIASM,
   CHANGE_ITEM
-} from "../constants/index";
+} from "../constants";
 import { ChangeItem } from "../actions";
 import { combineReducers } from "redux";
 
-function enthusiam(state: StoreState, action: EnthusiamAction): StoreState {
+// const enthusiamInitial: StoreState = {
+//   languageName: "",
+//   enthusiasmLevel: 0,
+//   itemName: ""
+// };
+function enthusiam(
+  state = { languageName: "", enthusiasmLevel: 0 },
+  action: EnthusiamAction
+) {
   switch (action.type) {
     case INCREMENT_ENTHUSIASM:
       return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
@@ -22,10 +30,13 @@ function enthusiam(state: StoreState, action: EnthusiamAction): StoreState {
   }
 }
 
-function changeItemAsyn(state: StoreState, action: ChangeItem): StoreState {
+function changeItemAsyn(
+  state = {itemName:'初始'},
+  action: ChangeItem
+) {
   switch (action.type) {
     case CHANGE_ITEM:
-      return state;
+      return { ...state, itemName: "dispatchItem" };
     default:
       return state;
   }
