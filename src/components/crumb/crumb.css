@@ -1,0 +1,6 @@
+.buttonGroup{
+    float: right;
+}
+.buttonGroup button{
+    margin-right: 20px;
+}

@@ -5,7 +5,9 @@ import "./hello.css";
 // import Test from '../public/test/test';
 import SideMenu from '../sideMenu/Sidemenu';
 import Crumb from '../../containers/Crumb';
-import { Button, Layout, Icon, Timeline} from "antd";
+import  Mtable  from '../public/table/index';
+import UserCenter from '../userCenter/userCenter';
+import { Layout} from "antd";
 import "antd/dist/antd.css";
 // import 'antd-mobile/dist/antd-mobile.css';
 import { Map, is } from "immutable"; //引入immutable
@@ -24,8 +26,8 @@ export interface Props {
  * @extends {React.Component<Props, {}>}
  */
 class Hello extends React.Component<Props, {}> {
-  constructor(props: Props) {
-    super(props);
+  constructor(props: Props, context: any) {
+    super(props, context);
     // this.state = {
     //     // current: 'mail'
     // }
@@ -36,7 +38,7 @@ class Hello extends React.Component<Props, {}> {
   };
 
   public onCollapse = (collapsed: any, test: any) => {
-    console.log(this.state.test);
+    console.log(this.context);
     let data = Map(this.state.test);
     let a = Map({
       select: "users",
@@ -48,7 +50,8 @@ class Hello extends React.Component<Props, {}> {
     this.setState({ collapsed, test: data });
   };
   render() {
-    const { name='mmm', enthusiasmLevel = 1, onDecrement, onIncrement } = this.props;
+    const { enthusiasmLevel = 1} = this.props;
+    // const { name='mmm', enthusiasmLevel = 1, onDecrement, onIncrement } = this.props;
 
     if (enthusiasmLevel <= 0) {
       throw new Error("you could need more enthusiam");
@@ -65,6 +68,7 @@ class Hello extends React.Component<Props, {}> {
         </Sider>
         <Layout>
           <Header style={{ background: "#fff", padding: 0 }} />
+          <UserCenter></UserCenter>
           <Content style={{ margin: "0 16px" }}>
             <Crumb></Crumb>
             {/* <Breadcrumb style={{ margin: "16px 0" }}>
@@ -73,24 +77,17 @@ class Hello extends React.Component<Props, {}> {
             </Breadcrumb> */}
             <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
               <div className="hello">
-              <Timeline>
-                <Timeline.Item>2018-06-01商品已经打包出货，发往上海中转站</Timeline.Item>
-                <Timeline.Item>2018-06-02 商品已经到达上海中转站，下站发往苏州</Timeline.Item>
-                <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />} color="red">
-                    2018-06-02 商品已经到达苏州分拨中心，下站发往苏州建屋大厦
-                </Timeline.Item>
-                <Timeline.Item>2018-06-03商品已经签收</Timeline.Item>
-            </Timeline>
-                <div className="greeting">
+              <Mtable></Mtable>
+                {/* <div className="greeting">
                   {name}
                   {enthusiasmLevel}
                 </div>
                 <Button className="btn" type="primary" onClick={onDecrement}>
-                  -
+                  pre
                 </Button>
                 <Button className="btn" type="primary" onClick={onIncrement}>
-                  +
-                </Button>
+                  next
+                </Button> */}
                 <div />
               </div>
             </div>

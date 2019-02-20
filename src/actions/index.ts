@@ -12,6 +12,7 @@ export type EnthusiamAction = IncrementEnthusiam | DecrementEnthusiam;
 
 export interface ChangeItem{
     type: constants.CHANGE_ITEM;
+    text: string;
 }
 
 /**
@@ -39,6 +40,7 @@ export function decrementEnthusiam(): DecrementEnthusiam{
  */
 export function changeAction(): ChangeItem{
     return {
-        type: constants.CHANGE_ITEM
+        type: constants.CHANGE_ITEM,
+        text: ''
     }
 }

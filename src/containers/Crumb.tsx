@@ -1,12 +1,13 @@
 import Crumb from '../components/crumb/Crumb';
 import * as actions from '../actions';
-import { StoreState } from '../types';
+// import { StoreState } from '../types';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-export function mapStateToProps({itemName}: StoreState) {
+// export function mapStateToProps({itemName}: StoreState) {
+export function mapStateToProps(state: any) {
   return {
-    itemName
+    name:state.changeItemAsyn.itemName
   }
 }
 
