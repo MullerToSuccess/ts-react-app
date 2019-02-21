@@ -3,10 +3,11 @@ import "./hello.css";
 // import Header from '../public/header/header';
 // import Footer from '../public/footer/footer';
 // import Test from '../public/test/test';
-import SideMenu from '../sideMenu/Sidemenu';
+// import SideMenu from '../sideMenu/Sidemenu';
 import Crumb from '../../containers/Crumb';
-import  Mtable  from '../public/table/index';
+import  Mtable  from '../../containers/Mtable';
 import UserCenter from '../userCenter/userCenter';
+import MtreeNode from '../treeNode/treeNode';
 import { Layout} from "antd";
 import "antd/dist/antd.css";
 // import 'antd-mobile/dist/antd-mobile.css';
@@ -62,9 +63,11 @@ class Hello extends React.Component<Props, {}> {
           collapsible
           collapsed={this.state.collapsed}
           onCollapse={this.onCollapse}
+          theme='light'
         >
           <div className="logo" />
-          <SideMenu></SideMenu>
+          {/* <SideMenu></SideMenu> */}
+          <MtreeNode></MtreeNode>
         </Sider>
         <Layout>
           <Header style={{ background: "#fff", padding: 0 }} />

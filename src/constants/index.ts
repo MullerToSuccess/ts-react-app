@@ -7,3 +7,6 @@ export type DECREMENT_ENTHUSIASM = typeof DECREMENT_ENTHUSIASM;
 
 export const CHANGE_ITEM = 'CHANGE_ITEM';
 export type CHANGE_ITEM = typeof CHANGE_ITEM;
+
+export const GET_TABLE = 'GET_TABLE';
+export type GET_TABLE = typeof GET_TABLE;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Breadcrumb, Button, Modal} from "antd";
+import { Button, Modal} from "antd";
 import './crumb.css';
 export interface Item{
     name?: string;
@@ -39,9 +39,10 @@ class Crumb extends React.Component<Item>{
     const { name } = this.props;
     return (
       <div>
-      <Breadcrumb style={{ margin: "16px 0" }}>
+      {/* <Breadcrumb style={{ margin: "16px 0" }}>
         <Breadcrumb.Item>{name}</Breadcrumb.Item>
-      </Breadcrumb>
+      </Breadcrumb> */}
+      <div className='currentTitle'>{name}</div>
       <Modal
           title="Basic Modal"
           visible={this.state.visible}

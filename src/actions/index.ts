@@ -15,6 +15,11 @@ export interface ChangeItem{
     text: string;
 }
 
+export interface GetTable{
+    type: constants.GET_TABLE;
+    data: any
+}
+
 /**
  *
  *纯action返回action的string类型的type
@@ -42,5 +47,18 @@ export function changeAction(): ChangeItem{
     return {
         type: constants.CHANGE_ITEM,
         text: ''
+    }
+}
+
+/**
+ *get_table的action
+ *
+ * @export
+ * @returns {GetTable}
+ */
+export function getTable(data: any): GetTable{
+    return {
+        type: constants.GET_TABLE,
+        data: data
     }
 }

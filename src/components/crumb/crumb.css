@@ -4,3 +4,8 @@
 .buttonGroup button{
     margin-right: 20px;
 }
+.currentTitle{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+}

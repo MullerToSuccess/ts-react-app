@@ -1,8 +1,8 @@
-import enthusiam from './enthusiam';
-import changeItemAsyn from './change';
+//引入各个模块需要的reducer函数：
+import enthusiam from "./enthusiam";
+import changeItemAsyn from "./change";
+import getTableAsyn from "./table";
 
 import { combineReducers } from "redux";
 
-
-
-export default combineReducers({ enthusiam, changeItemAsyn });
+export default combineReducers({ enthusiam, changeItemAsyn, getTableAsyn });
