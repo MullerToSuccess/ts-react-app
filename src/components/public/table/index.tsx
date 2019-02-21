@@ -19,14 +19,15 @@ const columns: any = [
   },
   { title: "账户", dataIndex: "address", key: "1" },
   { title: "使用状态", dataIndex: "address", key: "2" },
-  // { title: 'Column 3', dataIndex: 'address', key: '3' },
-  // { title: 'Column 4', dataIndex: 'address', key: '4' },
   {
     title: "操作",
     key: "operation",
     fixed: "right",
-    width: 100,
-    render: () => <a href="javascript:;">查看</a>
+    width: 200,
+    render: (text: any, record: any) => 
+    (<div><a>查看</a>
+    <a href="javascript:;">修改</a>
+    <a href="javascript:;">删除</a></div>)
   }
 ];
 export interface TableData {
@@ -38,10 +39,16 @@ export interface TableColums {
 class Mtable extends React.Component<any> {
   constructor(props: any) {
     super(props);
+    this.showModal = this.showModal.bind(this);
   }
-  state = { table: [] };
+  state = { table: [], visible: false};
   componentDidMount() {
     this.getTableData();
+  }
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
   }
   getTableData() {
     store.dispatch({ type: "GET_TABLE" });

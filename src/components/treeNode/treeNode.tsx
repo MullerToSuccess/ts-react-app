@@ -10,7 +10,11 @@ import * as actions from "../../actions";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import axios from "axios";
+// import { get } from '../../axios/axios';
 
+// const thisApi = {
+//     getTable: get
+// }
 const { TreeNode } = Tree;
 const Search = Input.Search;
 const mockUrl =
@@ -30,7 +34,13 @@ class MtreeNode extends React.Component<any> {
   /* 选择树节点 */
   onSelect = (selectedKeys: any, info: any) => {
     store.dispatch({ type: "CHANGE_ITEM", text: info.node.props.title });
-    this.props.getTableAsyn();
+    console.log(info);
+    let params = {
+        params:{
+            keys: info.node.props.eventKey
+        }
+    }
+    this.props.getTableAsyn(params);
   };
   /* 搜索获取表格数据 */
   goSearch = (val: any) =>{
@@ -79,7 +89,6 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.GetTable>) {
         .then(res => {
           console.log(res.data.data);
           dispatch(actions.getTable(res.data.data));
-        //   dispatch(actions.getTable(res.data.data));
         })
         .catch(err => {
           console.log(err);
