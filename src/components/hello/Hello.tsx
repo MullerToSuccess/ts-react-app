@@ -70,8 +70,9 @@ class Hello extends React.Component<Props, {}> {
           <MtreeNode></MtreeNode>
         </Sider>
         <Layout>
-          <Header style={{ background: "#fff", padding: 0 }} />
+          <Header style={{ background: "#fff", padding: 0 }}>
           <UserCenter></UserCenter>
+          </Header>
           <Content style={{ margin: "0 16px" }}>
             <Crumb></Crumb>
             {/* <Breadcrumb style={{ margin: "16px 0" }}>

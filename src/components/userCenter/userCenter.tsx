@@ -1,9 +1,10 @@
 import * as React from "react";
-import { Avatar } from "antd";
+import { Avatar, Select  } from "antd";
 import axios from "axios";
 // import store from "../../store/store";
 import './userCenter.css'
 
+const Option = Select.Option;
 const mockUrl =
   "https://www.easy-mock.com/mock/5a4076786b299a5279fc91fa/example/getUser";
 
@@ -15,7 +16,7 @@ class UserCenter extends React.Component<any> {
     userInfo: {
       username: "",
       isLogin: true,
-      role: "",
+      role: "admin",
       icon: "",
       phone: ""
     }
@@ -43,6 +44,10 @@ class UserCenter extends React.Component<any> {
       <div className='userCenter'>
         <Avatar size="large" src={this.state.userInfo.icon} />
         {this.state.userInfo.username}
+        <Select defaultValue={this.state.userInfo.role} style={{ width: 120 }} >
+          <Option value={this.state.userInfo.role}>{this.state.userInfo.role}</Option>
+          <Option value=''>{this.state.userInfo.role}</Option>
+      </Select>
       </div>
     );
   }
