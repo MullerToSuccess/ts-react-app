@@ -3,7 +3,7 @@ import "./hello.css";
 // import Header from '../public/header/header';
 // import Footer from '../public/footer/footer';
 // import Test from '../public/test/test';
-// import SideMenu from '../sideMenu/Sidemenu';
+import SideMenu from '../../containers/Sidemenu';
 import Crumb from '../../containers/Crumb';
 import  Mtable  from '../../containers/Mtable';
 import UserCenter from '../userCenter/userCenter';
@@ -66,7 +66,7 @@ class Hello extends React.Component<Props, {}> {
           theme='light'
         >
           <div className="logo" />
-          {/* <SideMenu></SideMenu> */}
+          <SideMenu></SideMenu>
           <MtreeNode></MtreeNode>
         </Sider>
         <Layout>

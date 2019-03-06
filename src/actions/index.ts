@@ -20,6 +20,15 @@ export interface GetTable{
     data: any
 }
 
+export interface ToggleVisible{
+    type: constants.TOGGLE_VISIBLE,
+    data: any
+}
+
+export interface GetColumn{
+    type: constants.GET_COLUMN,
+    data: any
+}
 /**
  *
  *纯action返回action的string类型的type
@@ -59,6 +68,20 @@ export function changeAction(): ChangeItem{
 export function getTable(data: any): GetTable{
     return {
         type: constants.GET_TABLE,
+        data: data
+    }
+}
+
+export function toggleVisible(data: any): ToggleVisible{
+    return {
+        type: constants.TOGGLE_VISIBLE,
+        data: data
+    }
+}
+/* 获取column参数 */
+export function getColumn(data: any): GetColumn{
+    return {
+        type: constants.GET_COLUMN,
         data: data
     }
 }

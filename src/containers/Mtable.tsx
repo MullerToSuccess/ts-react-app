@@ -22,7 +22,6 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.GetTable>) {
         }).catch(err => {
             console.log(err);
         })
-        
     }
   }
 }

@@ -10,3 +10,9 @@ export type CHANGE_ITEM = typeof CHANGE_ITEM;
 
 export const GET_TABLE = 'GET_TABLE';
 export type GET_TABLE = typeof GET_TABLE;
+
+export const TOGGLE_VISIBLE = 'TOGGLE_VISIBLE';
+export type TOGGLE_VISIBLE = typeof TOGGLE_VISIBLE;
+
+export const GET_COLUMN = 'GET_COLUMN';
+export type GET_COLUMN = typeof GET_COLUMN;

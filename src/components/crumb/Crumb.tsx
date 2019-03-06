@@ -36,6 +36,7 @@ class Crumb extends React.Component<Item>{
     });
   }
   render() {
+    console.log(this.props);
     const { name } = this.props;
     return (
       <div>

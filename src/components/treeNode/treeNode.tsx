@@ -25,7 +25,7 @@ class MtreeNode extends React.Component<any> {
     super(props, context);
   }
   componentDidMount() {
-
+    
   }
   /* 设置当前选择的节点名 */
   setItemName = (e: any) => {
