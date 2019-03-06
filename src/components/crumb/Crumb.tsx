@@ -44,14 +44,12 @@ class Crumb extends React.Component<Item>{
       </Breadcrumb> */}
       <div className='currentTitle'>{name}</div>
       <Modal
-          title="Basic Modal"
+          title="添加"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+        
         </Modal>
       <div className='buttonGroup'>
         <Button type='primary' onClick={this.showModal}>添加用户</Button>
