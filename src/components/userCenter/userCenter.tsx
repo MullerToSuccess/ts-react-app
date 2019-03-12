@@ -8,7 +8,7 @@ const Option = Select.Option;
 const mockUrl =
   "https://www.easy-mock.com/mock/5a4076786b299a5279fc91fa/example/getUser";
 
-class UserCenter extends React.Component<any> {
+export default class UserCenter extends React.Component<any> {
   constructor(props: any) {
     super(props);
   }
@@ -54,5 +54,3 @@ class UserCenter extends React.Component<any> {
     );
   }
 }
-
-export default UserCenter;

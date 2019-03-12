@@ -10,7 +10,9 @@ const initState = {
   idNumber: '', 
   loginName: '',
   status: false,
-  department: ''
+  department: '',
+  age: '',
+  address: ''
 }
 export  function toggleVisible(state = initState, action: ToggleVisible) {
   switch (action.type) {
@@ -23,7 +25,9 @@ export  function toggleVisible(state = initState, action: ToggleVisible) {
 export  function getColumn(state = initState, action: GetColumn) {
   switch (action.type) {
     case GET_COLUMN:
-      return { ...state, state: action.data };
+     let newState = state;
+     newState = Object.assign({}, newState, action.data);
+      return newState;
     default:
       return state;
   }

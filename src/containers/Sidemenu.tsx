@@ -9,7 +9,8 @@ import { Dispatch } from 'redux';
 export function mapStateToProps(state: any) {
   return {
     visible: state.toggleVisible.visible,
-    userName: state.getColumn.userName
+    userName: state.getColumn.userName,
+    sideUserInfo: state.getColumn
   }
 }
 
